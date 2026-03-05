@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A7A5 x China — Strategic Brief</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Unbounded:wght@400;600;700;900&display=swap');
+
+        :root {
+            --bg: #FDFBF7;
+            --card: #FFFFFF;
+            --accent: #E8573A;
+            --accent-soft: #FFF0ED;
+            --blue: #2D5BFF;
+            --blue-soft: #EEF2FF;
+            --green: #16A34A;
+            --green-soft: #ECFDF5;
+            --gold: #D97706;
+            --gold-soft: #FFFBEB;
+            --purple: #7C3AED;
+            --purple-soft: #F3EEFF;
+            --red: #DC2626;
+            --red-soft: #FEF2F2;
+            --text: #1A1A2E;
+            --text-muted: #6B7280;
+            --border: #E5E7EB;
+            --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-lg: 0 4px 12px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.04);
+            --radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 12px 24px;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: var(--accent-soft);
+            color: var(--accent);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 120px 24px 60px;
+            text-align: center;
+            background: linear-gradient(180deg, #FDFBF7 0%, #FFF5F0 50%, #FDFBF7 100%);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-date {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .section-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        /* Alert */
+        .alert {
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .alert-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .alert-red {
+            background: var(--red-soft);
+            border: 2px solid #FECACA;
+        }
+
+        .alert-gold {
+            background: var(--gold-soft);
+            border: 2px solid #FDE68A;
+        }
+
+        .alert-green {
+            background: var(--green-soft);
+            border: 2px solid #BBF7D0;
+        }
+
+        .alert h3 {
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .alert p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Stat boxes */
+        .stat-box {
+            text-align: center;
+            padding: 28px 20px;
+        }
+
+        .stat-number {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .stat-accent { color: var(--accent); }
+        .stat-blue { color: var(--blue); }
+        .stat-green { color: var(--green); }
+        .stat-gold { color: var(--gold); }
+        .stat-purple { color: var(--purple); }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 16px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+            padding: 20px 24px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 24px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg);
+        }
+
+        .timeline-date {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            font-size: 15px;
+            margin: 4px 0;
+        }
+
+        .timeline-text {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .tag-red { background: var(--red-soft); color: var(--red); }
+        .tag-green { background: var(--green-soft); color: var(--green); }
+        .tag-blue { background: var(--blue-soft); color: var(--blue); }
+        .tag-gold { background: var(--gold-soft); color: var(--gold); }
+        .tag-purple { background: var(--purple-soft); color: var(--purple); }
+
+        /* Table */
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: var(--card);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            background: #F9FAFB;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #F3F4F6;
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        /* Pricing */
+        .pricing-card {
+            background: linear-gradient(135deg, var(--accent) 0%, #C7461F 100%);
+            color: white;
+            border-radius: var(--radius);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .pricing-card h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .pricing-amount {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 56px;
+            font-weight: 900;
+            margin: 16px 0;
+        }
+
+        .pricing-unit {
+            font-size: 18px;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin: 24px 0;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pricing-features li::before {
+            content: '\2713';
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .pricing-total {
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 20px;
+        }
+
+        .pricing-total-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .pricing-total-amount {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        /* Psychology section */
+        .psych-card {
+            background: linear-gradient(135deg, #FFF7ED 0%, #FFF1F2 100%);
+            border: 1px solid #FECACA;
+        }
+
+        .psych-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+
+        .psych-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .psych-text {
+            font-size: 14px;
+        }
+
+        .psych-text strong {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 60px 0;
+        }
+
+        /* List */
+        .check-list {
+            list-style: none;
+        }
+
+        .check-list li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            padding: 8px 0;
+            font-size: 15px;
+        }
+
+        .check-list li::before {
+            content: '\2713';
+            color: var(--green);
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Roadmap */
+        .roadmap-step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .roadmap-num {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            flex-shrink: 0;
+            color: white;
+        }
+
+        .roadmap-content h4 {
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .roadmap-content p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Slide marker for presentation */
+        .slide-marker {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.5;
+            margin-bottom: 8px;
+        }
+
+        /* Compact list for info blocks */
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #F3F4F6;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .info-list li:last-child { border: none; }
+
+        .info-key {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .info-val {
+            font-weight: 600;
+        }
+
+        /* Print styles */
+        @media print {
+            .nav { display: none; }
+            .hero { padding-top: 40px; }
+            .card { break-inside: avoid; }
+        }
+
+        /* Small screens */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .section { padding: 40px 16px; }
+        }
+
+        /* Cute decorative elements */
+        .deco-dots {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .deco-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.3;
+        }
+        .deco-dots span:first-child { opacity: 1; }
+        .deco-dots span:nth-child(2) { opacity: 0.7; }
+        .deco-dots span:nth-child(3) { opacity: 0.5; }
+
+        /* WeChat green accent */
+        .wechat-green { color: #07C160; }
+        .wechat-bg { background: #07C160; }
+
+        /* Soft decorative backgrounds */
+        .bg-warm { background: linear-gradient(135deg, #FFF7ED 0%, #FFFBEB 100%); }
+        .bg-cool { background: linear-gradient(135deg, #EEF2FF 0%, #F0FDF4 100%); }
+        .bg-soft-pink { background: linear-gradient(135deg, #FFF1F2 0%, #FFF7ED 100%); }
+
+        /* Blockquote */
+        .bq {
+            border-left: 4px solid var(--accent);
+            padding: 16px 20px;
+            background: var(--accent-soft);
+            border-radius: 0 12px 12px 0;
+            font-size: 15px;
+            font-style: italic;
+            color: var(--text);
+            margin: 16px 0;
+        }
+
+        /* Highlight */
+        .highlight {
+            background: linear-gradient(120deg, #FDE68A 0%, #FDE68A 100%);
+            background-size: 100% 40%;
+            background-repeat: no-repeat;
+            background-position: 0 88%;
+            padding: 0 2px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="nav-brand">A7A5 x China</div>
+        <div class="nav-links">
+            <a href="#company">Компания</a>
+            <a href="#sanctions">Санкции</a>
+            <a href="#china">Китай</a>
+            <a href="#wechat">WeChat</a>
+            <a href="#strategy">Стратегия</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#psychology">Коммуникация</a>
+            <a href="#pricing">Условия</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-badge">
+        <span>&#128196;</span> Strategic Brief
+    </div>
+    <h1>A7A5 & WeChat:<br>Выход на Китай</h1>
+    <p class="hero-sub">Комплексный бриф для подготовки к встрече. Продукт, рынок, регуляция, инструменты, стратегия продвижения.</p>
+    <p class="hero-date">&#128197; Подготовлено: 5 марта 2026 &middot; Встреча: 6 марта 2026</p>
+</section>
+
+<!-- SECTION: Company Profile -->
+<section class="section" id="company">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--blue-soft);">&#127974;</div>
+        <div>
+            <div class="slide-marker">Slide 01</div>
+            <h2 class="section-title">Профиль компании A7A5</h2>
+            <div class="section-subtitle">Что представляет собой продукт</div>
+        </div>
+    </div>
+
+    <div class="grid-4" style="margin-bottom: 24px;">
+        <div class="card stat-box">
+            <div class="stat-number stat-accent">$93.3B</div>
+            <div class="stat-label">Транзакций за &lt;1 год</div>
+        </div>
+        <div class="card stat-box">
+            <div class="stat-number stat-blue">~$500M</div>
+            <div class="stat-label">Рыночная капитализация</div>
+        </div>
+        <div class="card stat-box">
+            <div class="stat-number stat-green">43%</div>
+            <div class="stat-label">Доля non-USD stablecoin</div>
+        </div>
+        <div class="card stat-box">
+            <div class="stat-number stat-gold">#1</div>
+            <div class="stat-label">Крупнейший не-$ стейблкоин</div>
+        </div>
+    </div>
+
+    <div class="grid-2">
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#128300; Что такое A7A5</h3>
+            <ul class="info-list">
+                <li><span class="info-key">Тип</span><span class="info-val">Стейблкоин (1:1 к RUB)</span></li>
+                <li><span class="info-key">Эмитент</span><span class="info-val">LLC Old Vector (KG)</span></li>
+                <li><span class="info-key">Блокчейн</span><span class="info-val">Tron + Ethereum</span></li>
+                <li><span class="info-key">Запуск</span><span class="info-val">Февраль 2025</span></li>
+                <li><span class="info-key">Резервный банк</span><span class="info-val">Промсвязьбанк (ПСБ)</span></li>
+                <li><span class="info-key">Основные рынки</span><span class="info-val">Китай, Иран, ЮВА, Африка</span></li>
+                <li><span class="info-key">Ключевое лицо</span><span class="info-val">Олег Огиенко (Dir. Reg. Affairs)</span></li>
+                <li><span class="info-key">Биржи</span><span class="info-val">Grinex, Meer Exchange</span></li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#128202; Позиция на рынке</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">A7A5 — крупнейший в мире стейблкоин, не привязанный к доллару. Основное применение: расчёты российского экспорта/импорта.</p>
+            <div class="bq">
+                "We mainly provide payment rails extensively for Russian export and import operations" &mdash; Олег Огиенко, A7A5
+            </div>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 12px;"><strong>Рост:</strong> +$90B в обращении за 2025 год (USDT за то же время +$49B, USDC +$31B)</p>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;"><strong>Дневной объём:</strong> Пик $1.5B/день, текущий ~$500M/день (снижение после санкций)</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: Sanctions -->
+<section class="section" id="sanctions" style="background: var(--red-soft); border-radius: 24px; margin: 0 auto; max-width: 1200px;">
+    <div class="section-header">
+        <div class="section-icon" style="background: white;">&#9888;&#65039;</div>
+        <div>
+            <div class="slide-marker">Slide 02 &mdash; CRITICAL</div>
+            <h2 class="section-title" style="color: var(--red);">Санкционный статус</h2>
+            <div class="section-subtitle">Информация, которую контрагент не раскрыл</div>
+        </div>
+    </div>
+
+    <div class="alert alert-red">
+        <div class="alert-icon">&#128680;</div>
+        <div>
+            <h3>A7A5 находится под санкциями США, Великобритании и ЕС</h3>
+            <p>LLC Old Vector, Grinex, Meer Exchange, а также связанный Промсвязьбанк (ПСБ) включены в санкционные списки OFAC, UK и EU. Chainalysis: 50% ($72B) всех незаконных стейблкоин-потоков связано с A7A5. Bloomberg: "$100B+ транзакций несмотря на санкции".</p>
+        </div>
+    </div>
+
+    <div class="grid-3" style="margin-bottom: 24px;">
+        <div class="card" style="border-left: 4px solid var(--red);">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#127482;&#127480;</div>
+            <h4 style="font-weight: 700; font-size: 15px; margin-bottom: 6px;">USA (OFAC)</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">Санкции на Old Vector, Grinex, Meer, Capital Bank, Keremet Bank. Август 2025.</p>
+            <span class="tag tag-red" style="margin-top: 8px;">SDN List</span>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--red);">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#127468;&#127463;</div>
+            <h4 style="font-weight: 700; font-size: 15px; margin-bottom: 6px;">United Kingdom</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">Заморозка активов Old Vector. Запрет трастовых услуг. "Стратегические выгоды для правительства РФ".</p>
+            <span class="tag tag-red" style="margin-top: 8px;">Asset Freeze</span>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--red);">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#127466;&#127482;</div>
+            <h4 style="font-weight: 700; font-size: 15px; margin-bottom: 6px;">European Union</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">20-й пакет санкций (24 фев 2026): полный запрет крипто-транзакций и платформ, связанных с Россией.</p>
+            <span class="tag tag-red" style="margin-top: 8px;">20th Package</span>
+        </div>
+    </div>
+
+    <div class="card" style="margin-bottom: 24px;">
+        <h3 style="font-weight: 700; margin-bottom: 12px; font-size: 16px;">&#128279; Связь с Иланом Шором</h3>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">По данным Financial Times и российских корпоративных реестров, основной бенефициар компании А7 (стоящей за стейблкоином) &mdash; <strong>Илан Шор</strong>, молдавский олигарх, находящийся в розыске. Через его схемы в Кыргызстане прошло более <strong>$15 млрд</strong>.</p>
+        <p style="font-size: 14px; color: var(--text-muted);">Президент Кыргызстана публично протестовал против санкций США и UK, назвав их "давлением".</p>
+    </div>
+
+    <div class="alert alert-gold">
+        <div class="alert-icon">&#128161;</div>
+        <div>
+            <h3>Что это значит для консалтинга</h3>
+            <p>Оказание маркетинговых услуг санкционному лицу может повлечь риски вторичных санкций. Рекомендуется: (1) зафиксировать scope консультации как образовательный/аналитический, (2) получить юридическую консультацию по compliance, (3) принимать оплату только в несанкционных валютах через прозрачные каналы. Консультационные услуги общего характера (стратегический совет, рыночная аналитика) обычно не подпадают под ограничения, но требуют юридической верификации.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: A7A5 x China -->
+<section class="section" id="china">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--red-soft);">&#127464;&#127475;</div>
+        <div>
+            <div class="slide-marker">Slide 03</div>
+            <h2 class="section-title">A7A5 и Китай: текущая ситуация</h2>
+            <div class="section-subtitle">Как стейблкоин уже работает на китайском рынке</div>
+        </div>
+    </div>
+
+    <div class="alert alert-green" style="margin-bottom: 24px;">
+        <div class="alert-icon">&#128200;</div>
+        <div>
+            <h3>A7A5 уже активно используется в расчётах с Китаем</h3>
+            <p>По данным Cointelegraph и MEXC, рост A7A5 напрямую связан с увеличением платёжных транзакций с Китаем. A7A5 базируется на инфраструктуре ПСБ и используется преимущественно для расчётов в Китае, Иране и ЮВА.</p>
+        </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom: 24px;">
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#128200; Как A7A5 работает в Китае сейчас</h3>
+            <ul class="check-list">
+                <li>Расчёты в международной торговле (экспорт/импорт)</li>
+                <li>Settlement rail для санкционных российских компаний</li>
+                <li>Обход SWIFT-ограничений через крипторельсы</li>
+                <li>P2P и OTC-обмен через крипто-площадки</li>
+                <li>Доступ к юаневой ликвидности через DeFi-конвертацию</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#128683; Ограничения в Китае</h3>
+            <ul class="info-list">
+                <li><span class="info-key">Крипто-торговля</span><span class="tag tag-red">Запрещена</span></li>
+                <li><span class="info-key">Майнинг</span><span class="tag tag-red">Запрещён</span></li>
+                <li><span class="info-key">Юань-стейблкоины</span><span class="tag tag-red">Запрещены (фев 2026)</span></li>
+                <li><span class="info-key">NFT/RWA-токенизация</span><span class="tag tag-red">Запрещены</span></li>
+                <li><span class="info-key">Цифровой юань (e-CNY)</span><span class="tag tag-green">Гос. приоритет</span></li>
+                <li><span class="info-key">Гонконг (стейблкоины)</span><span class="tag tag-blue">Лицензирование</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card bg-warm" style="margin-bottom: 24px;">
+        <h3 style="font-weight: 700; margin-bottom: 12px; font-size: 16px;">&#127470;&#127472; Гипотеза: Что A7A5 хочет в Китае?</h3>
+        <div class="grid-2" style="gap: 16px;">
+            <div>
+                <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;"><strong>Вероятный запрос:</strong></p>
+                <ul class="check-list" style="font-size: 14px;">
+                    <li>Расширение B2B-партнёрств с китайскими трейдерами/импортёрами</li>
+                    <li>Привлечение OTC-дилеров через WeChat-сообщества</li>
+                    <li>Повышение узнаваемости бренда среди крипто-аудитории в КНР</li>
+                    <li>Продвижение через китайских KOL в крипто-сфере</li>
+                    <li>Создание Chinese-language presence для доверия</li>
+                </ul>
+            </div>
+            <div>
+                <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;"><strong>Контекст:</strong></p>
+                <ul class="check-list" style="font-size: 14px;">
+                    <li>Товарооборот РФ-КНР: $240B+ (2025)</li>
+                    <li>~30% расчётов уже идёт в нацвалютах</li>
+                    <li>Рублёвый стейблкоин = мост между CNY и RUB</li>
+                    <li>Гонконг как "серая зона" для крипто-маркетинга</li>
+                    <li>Token2049 Singapore, Consensus HK &mdash; A7A5 уже участвует</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: China Regulation -->
+<section class="section">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--gold-soft);">&#9878;&#65039;</div>
+        <div>
+            <div class="slide-marker">Slide 04</div>
+            <h2 class="section-title">Регуляция в Китае</h2>
+            <div class="section-subtitle">Крипто, данные, Great Firewall, платежи</div>
+        </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom: 24px;">
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#128274; Криптовалютная регуляция</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Сентябрь 2021</div>
+                    <div class="timeline-title">Полный запрет криптовалют</div>
+                    <div class="timeline-text">Торговля, майнинг, обмен &mdash; всё запрещено на территории КНР</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-title">Расширение запрета</div>
+                    <div class="timeline-text">PBOC включил NFT, алгоритмические стейблкоины, RWA в запрет</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Февраль 2026</div>
+                    <div class="timeline-title">Запрет юань-стейблкоинов</div>
+                    <div class="timeline-text">PBOC + 7 регуляторов: директива против юань-привязанных стейблкоинов и токенизации RWA</div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#128176; Цифровой юань (e-CNY)</h3>
+            <div class="grid-2" style="gap: 12px; margin-bottom: 16px;">
+                <div class="stat-box" style="background: var(--blue-soft); border-radius: 12px; padding: 16px;">
+                    <div class="stat-number stat-blue" style="font-size: 24px;">3.48B</div>
+                    <div class="stat-label">Транзакций</div>
+                </div>
+                <div class="stat-box" style="background: var(--green-soft); border-radius: 12px; padding: 16px;">
+                    <div class="stat-number stat-green" style="font-size: 24px;">16.7T</div>
+                    <div class="stat-label">Юаней оборот</div>
+                </div>
+            </div>
+            <ul class="check-list" style="font-size: 14px;">
+                <li>Интеграция с WeChat Pay и Alipay</li>
+                <li>Кросс-бордер через mBridge (95% CBDC-платежей = e-CNY)</li>
+                <li>С 1 янв 2026: начисление процентов на e-CNY кошельки</li>
+                <li>Проект $55B в cross-border расчётах</li>
+            </ul>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px; font-style: italic;">WeChat Pay в 2024: $15.4 трлн транзакций &mdash; в 1000x больше e-CNY</p>
+        </div>
+    </div>
+
+    <div class="card bg-cool" style="margin-bottom: 24px;">
+        <h3 style="font-weight: 700; margin-bottom: 12px; font-size: 16px;">&#128272; PIPL + Cybersecurity Law + Great Firewall</h3>
+        <div class="grid-3" style="gap: 16px;">
+            <div>
+                <span class="tag tag-purple" style="margin-bottom: 8px; display: inline-flex;">PIPL (2021)</span>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Personal Information Protection Law. Данные китайских граждан должны храниться в КНР. Согласие пользователя обязательно. Штрафы до 5% годового оборота.</p>
+            </div>
+            <div>
+                <span class="tag tag-blue" style="margin-bottom: 8px; display: inline-flex;">Cybersecurity Law</span>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Локализация данных. Обязательная проверка безопасности для "критической инфраструктуры". Серверы &mdash; в КНР.</p>
+            </div>
+            <div>
+                <span class="tag tag-red" style="margin-bottom: 8px; display: inline-flex;">Great Firewall</span>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Google, Facebook, Twitter, YouTube, Telegram &mdash; заблокированы. Только WeChat, Weibo, Douyin, RED. VPN &mdash; серая зона.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: WeChat -->
+<section class="section" id="wechat" style="background: linear-gradient(180deg, #F0FFF4 0%, var(--bg) 100%); border-radius: 24px; padding-top: 60px; margin: 0 auto; max-width: 1260px;">
+    <div class="section-header">
+        <div class="section-icon wechat-bg" style="color: white;">&#128172;</div>
+        <div>
+            <div class="slide-marker">Slide 05</div>
+            <h2 class="section-title"><span class="wechat-green">WeChat</span> Marketing</h2>
+            <div class="section-subtitle">Экосистема, возможности, инструменты</div>
+        </div>
+    </div>
+
+    <!-- WeChat stats -->
+    <div class="grid-4" style="margin-bottom: 24px;">
+        <div class="card stat-box">
+            <div class="stat-number wechat-green">1.41B</div>
+            <div class="stat-label">MAU (ежемесячная аудитория)</div>
+        </div>
+        <div class="card stat-box">
+            <div class="stat-number stat-blue">35%</div>
+            <div class="stat-label">Мобильного времени в КНР</div>
+        </div>
+        <div class="card stat-box">
+            <div class="stat-number stat-gold">45B</div>
+            <div class="stat-label">Сообщений в день</div>
+        </div>
+        <div class="card stat-box">
+            <div class="stat-number stat-purple">82 мин</div>
+            <div class="stat-label">Среднее время в день</div>
+        </div>
+    </div>
+
+    <!-- WeChat ecosystem -->
+    <div class="grid-3" style="margin-bottom: 24px;">
+        <div class="card">
+            <div style="font-size: 36px; margin-bottom: 12px;">&#128240;</div>
+            <h3 style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">Official Accounts</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Аналог корпоративных страниц. Два типа:</p>
+            <div style="background: var(--green-soft); border-radius: 8px; padding: 12px; margin-bottom: 8px;">
+                <strong style="font-size: 13px; color: var(--green);">Service Account (&#26381;&#21153;&#21495;)</strong>
+                <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">4 поста/мес с push-уведомлениями. Интеграция с платежами и Mini Programs. Верификация ~$45.</p>
+            </div>
+            <div style="background: var(--blue-soft); border-radius: 8px; padding: 12px;">
+                <strong style="font-size: 13px; color: var(--blue);">Subscription Account (&#35746;&#38405;&#21495;)</strong>
+                <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Неогр. постов. Контент-фокус. Ниже видимость (в отдельной папке).</p>
+            </div>
+        </div>
+        <div class="card">
+            <div style="font-size: 36px; margin-bottom: 12px;">&#128187;</div>
+            <h3 style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">Mini Programs (&#23567;&#31243;&#24207;)</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Легковесные приложения внутри WeChat. Не нужно скачивать.</p>
+            <ul class="info-list">
+                <li><span class="info-key">Пользователи</span><span class="info-val">945M</span></li>
+                <li><span class="info-key">DAU</span><span class="info-val">614M</span></li>
+                <li><span class="info-key">GMV</span><span class="info-val">$123B+/год</span></li>
+                <li><span class="info-key">Конверсия</span><span class="info-val">2-8%</span></li>
+                <li><span class="info-key">Разработка</span><span class="info-val">~8 недель</span></li>
+            </ul>
+        </div>
+        <div class="card">
+            <div style="font-size: 36px; margin-bottom: 12px;">&#128249;</div>
+            <h3 style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">WeChat Channels (&#35270;&#39057;&#21495;)</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Видео-платформа внутри WeChat. Конкурент Douyin.</p>
+            <ul class="info-list">
+                <li><span class="info-key">MAU</span><span class="info-val">800M</span></li>
+                <li><span class="info-key">Формат</span><span class="info-val">Short video</span></li>
+                <li><span class="info-key">E-commerce</span><span class="info-val">GMV +430% г/г</span></li>
+                <li><span class="info-key">Livestream</span><span class="info-val">Интеграция</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- WeChat advertising -->
+    <div class="card" style="margin-bottom: 24px;">
+        <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#128176; Рекламные инструменты WeChat</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Инструмент</th>
+                        <th>Формат</th>
+                        <th>Стоимость</th>
+                        <th>Метрики</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Moments Ads</strong></td>
+                        <td>Нативная реклама в ленте</td>
+                        <td>CPM $1.50-5.00 / CPC $0.40-1.50</td>
+                        <td>CTR 1-5%, конверсия 1-5%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>KOL / KOC</strong></td>
+                        <td>Инфлюенсер-маркетинг</td>
+                        <td>$500-50,000 за интеграцию</td>
+                        <td>Зависит от ниши и охвата</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WeChat Groups</strong></td>
+                        <td>Закрытые сообщества (до 500 чел.)</td>
+                        <td>Бесплатно (модерация)</td>
+                        <td>Retention, engagement</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WeCom (&#20225;&#19994;&#24494;&#20449;)</strong></td>
+                        <td>B2B CRM и коммуникации</td>
+                        <td>Бесплатно / Premium</td>
+                        <td>Lead management</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mini Program Ads</strong></td>
+                        <td>Реклама внутри мини-приложений</td>
+                        <td>CPM $2-8</td>
+                        <td>Install, конверсия</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Budget benchmarks -->
+    <div class="grid-2" style="margin-bottom: 24px;">
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 12px; font-size: 16px;">&#128178; Типичные бюджеты (WeChat marketing)</h3>
+            <ul class="info-list">
+                <li><span class="info-key">Тестовая кампания</span><span class="info-val">$280-700 (2-4 нед.)</span></li>
+                <li><span class="info-key">Запуск Official Account</span><span class="info-val">~$45 верификация</span></li>
+                <li><span class="info-key">Контент-маркетинг / мес</span><span class="info-val">$3,000-10,000</span></li>
+                <li><span class="info-key">KOL-кампания</span><span class="info-val">$5,000-50,000</span></li>
+                <li><span class="info-key">Mini Program (MVP)</span><span class="info-val">$15,000-50,000</span></li>
+                <li><span class="info-key">Full ecosystem launch</span><span class="info-val">$50,000-200,000</span></li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 12px; font-size: 16px;">&#127775; Кейсы: иностранные бренды в WeChat</h3>
+            <div style="margin-bottom: 12px;">
+                <span class="tag tag-gold" style="margin-bottom: 4px;">Hermes</span>
+                <p style="font-size: 13px; color: var(--text-muted);">+60% подписчиков Official Account, x3 engagement через physical-digital strategy</p>
+            </div>
+            <div style="margin-bottom: 12px;">
+                <span class="tag tag-purple" style="margin-bottom: 4px;">Armani Beauty</span>
+                <p style="font-size: 13px; color: var(--text-muted);">AR Try-On Mini Program (23 оттенка), high conversion через WeChat Pay</p>
+            </div>
+            <div>
+                <span class="tag tag-blue" style="margin-bottom: 4px;">MCM</span>
+                <p style="font-size: 13px; color: var(--text-muted);">8,595 pageviews, интерактивная механика swipe-left, strong click-to-purchase</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: Other Chinese Platforms -->
+<section class="section">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--purple-soft);">&#127760;</div>
+        <div>
+            <div class="slide-marker">Slide 06</div>
+            <h2 class="section-title">Другие платформы Китая</h2>
+            <div class="section-subtitle">WeChat &mdash; не единственный канал</div>
+        </div>
+    </div>
+
+    <div class="grid-3">
+        <div class="card">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#128250;</div>
+            <h4 style="font-weight: 700; font-size: 15px;">Douyin (&#25238;&#38899;)</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">Китайский TikTok. 750M+ DAU. Short video + e-commerce. Идеален для B2C, но строгая модерация крипто-контента.</p>
+            <span class="tag tag-gold" style="margin-top: 8px;">750M DAU</span>
+        </div>
+        <div class="card">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#128214;</div>
+            <h4 style="font-weight: 700; font-size: 15px;">RED / Xiaohongshu (&#23567;&#32418;&#20070;)</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">Lifestyle + review platform. 300M+ MAU. Популярен среди молодых женщин 18-35. Для fintech &mdash; через образовательный контент.</p>
+            <span class="tag tag-red" style="margin-top: 8px;">300M MAU</span>
+        </div>
+        <div class="card">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#128270;</div>
+            <h4 style="font-weight: 700; font-size: 15px;">Weibo (&#24494;&#21338;)</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">Китайский Twitter. 580M+ MAU. Подходит для PR, новостей, анонсов. Активное крипто-сообщество (несмотря на запрет).</p>
+            <span class="tag tag-blue" style="margin-top: 8px;">580M MAU</span>
+        </div>
+        <div class="card">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#127916;</div>
+            <h4 style="font-weight: 700; font-size: 15px;">Bilibili (&#21708;&#21737;&#21708;&#21737;)</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">Видеоплатформа. 340M+ MAU. Техническая аудитория 18-30. Финтех и блокчейн контент популярен.</p>
+            <span class="tag tag-purple" style="margin-top: 8px;">340M MAU</span>
+        </div>
+        <div class="card">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#128187;</div>
+            <h4 style="font-weight: 700; font-size: 15px;">Baidu (&#30334;&#24230;)</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">Поисковик #1 в Китае. SEO + Baidu Ads. Критичен для brandability. Baidu Baike (Wiki-аналог) для доверия.</p>
+            <span class="tag tag-green" style="margin-top: 8px;">Поисковик #1</span>
+        </div>
+        <div class="card">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#128188;</div>
+            <h4 style="font-weight: 700; font-size: 15px;">Zhihu (&#30693;&#20046;)</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">Q&A платформа (аналог Quora). 100M+ MAU. Экспертный контент. Финтех-сообщество активно.</p>
+            <span class="tag tag-gold" style="margin-top: 8px;">100M MAU</span>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: Strategy -->
+<section class="section" id="strategy">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--green-soft);">&#127919;</div>
+        <div>
+            <div class="slide-marker">Slide 07</div>
+            <h2 class="section-title">Стратегия продвижения</h2>
+            <div class="section-subtitle">Конкретные шаги для A7A5 в Китае через WeChat</div>
+        </div>
+    </div>
+
+    <div class="alert alert-gold" style="margin-bottom: 24px;">
+        <div class="alert-icon">&#128161;</div>
+        <div>
+            <h3>Важная оговорка</h3>
+            <p>Прямое продвижение криптовалют в КНР запрещено. Стратегия должна быть построена вокруг: (1) финтех-инфраструктуры, (2) cross-border payments, (3) trade facilitation &mdash; без прямого упоминания "крипто" / "стейблкоин" / "блокчейн" в рекламных материалах на территории КНР. Гонконг &mdash; отдельная юрисдикция с легальным крипто-фреймворком.</p>
+        </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom: 24px;">
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#128293; Стратегия 1: WeChat B2B Community</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Создание закрытого WeChat-сообщества для трейдеров и импортёров, занимающихся торговлей РФ-КНР</p>
+            <ul class="check-list" style="font-size: 14px;">
+                <li>Открыть Service Account (верификация через КНР-юрлицо или партнёра)</li>
+                <li>Контент: аналитика курсов RUB/CNY, регуляторные обзоры, кейсы</li>
+                <li>WeChat Groups: закрытые чаты по 200-500 чел. (таргетированное приглашение)</li>
+                <li>WeCom: CRM для B2B-лидов, автоматические ответы, сегментация</li>
+                <li>Вебинары через WeChat Channels (livestream) с приглашёнными экспертами</li>
+            </ul>
+            <div style="margin-top: 12px;">
+                <span class="tag tag-green">Бюджет: $5,000-15,000/мес</span>
+                <span class="tag tag-blue" style="margin-left: 4px;">Срок: 2-3 мес. запуск</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#128640; Стратегия 2: Гонконг Hub</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Использование Гонконга как легальной площадки для крипто-маркетинга с доступом к материковому Китаю</p>
+            <ul class="check-list" style="font-size: 14px;">
+                <li>HK Stablecoins Ordinance (авг 2025) &mdash; получение лицензии</li>
+                <li>Присутствие на HK крипто-конференциях (Token2049, Consensus)</li>
+                <li>PR в гонконгских и материковых СМИ (через HK angle)</li>
+                <li>Партнёрство с HK-лицензированными биржами</li>
+                <li>WeChat-контент из HK распространяется в mainland</li>
+            </ul>
+            <div style="margin-top: 12px;">
+                <span class="tag tag-gold">Бюджет: $20,000-50,000/мес</span>
+                <span class="tag tag-blue" style="margin-left: 4px;">Срок: 3-6 мес.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-2">
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#128101; Стратегия 3: KOL/KOC в крипто-нише</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Работа с китайскими лидерами мнений в финтех/крипто пространстве</p>
+            <ul class="check-list" style="font-size: 14px;">
+                <li>Идентификация 10-20 крипто-KOL с аудиторией 50K-500K</li>
+                <li>Платформы: WeChat, Weibo, Bilibili, Twitter (через VPN)</li>
+                <li>Формат: обзоры, интервью, AMA-сессии</li>
+                <li>Оплата: $1,000-10,000 за интеграцию (зависит от уровня KOL)</li>
+                <li>Community seeding: KOL приводят аудиторию в WeChat-группы</li>
+            </ul>
+            <div style="margin-top: 12px;">
+                <span class="tag tag-purple">Бюджет: $10,000-30,000/мес</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#128196; Стратегия 4: Контент-хаб</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Создание китайскоязычного контент-хаба (WeChat Official Account + Zhihu + Baidu)</p>
+            <ul class="check-list" style="font-size: 14px;">
+                <li>Еженедельные аналитические отчёты по торговле РФ-КНР</li>
+                <li>Обзоры регуляции (cross-border payments фокус)</li>
+                <li>Кейсы: как компании используют альтернативные расчёты</li>
+                <li>SEO на Baidu: "&#36328;&#22659;&#25903;&#20184;" (cross-border payments), "&#20013;&#20420;&#36152;&#26131;" (China-Russia trade)</li>
+                <li>Zhihu answers: экспертный контент для доверия</li>
+            </ul>
+            <div style="margin-top: 12px;">
+                <span class="tag tag-blue">Бюджет: $3,000-8,000/мес</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: Common Mistakes -->
+<section class="section">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--red-soft);">&#10060;</div>
+        <div>
+            <div class="slide-marker">Slide 08</div>
+            <h2 class="section-title">Типичные ошибки иностранцев в Китае</h2>
+            <div class="section-subtitle">Чего избежать</div>
+        </div>
+    </div>
+
+    <div class="grid-3">
+        <div class="card" style="border-top: 3px solid var(--red);">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#128683;</div>
+            <h4 style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">Прямой перевод контента</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">Машинный перевод EN&rarr;ZH убивает доверие. Нужен native Chinese copywriter, понимающий культурный контекст. "Финтех" и "блокчейн" имеют разные коннотации в КНР.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--red);">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#128275;</div>
+            <h4 style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">Игнорирование цензуры</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">WeChat активно модерирует крипто-контент. Аккаунт заблокируют за прямое упоминание торговли криптовалютами. Нужны "серые" формулировки.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--red);">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#127760;</div>
+            <h4 style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">Desktop-first подход</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">99% WeChat-пользователей &mdash; мобильные. Всё должно быть mobile-first. Загрузка &lt;3 сек. Без редиректов на внешние сайты.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--red);">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#128176;</div>
+            <h4 style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">Без WeChat Pay</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">Без интеграции WeChat Pay конверсия падает в разы. Китайские пользователи не переходят на внешние платёжные системы.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--red);">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#128100;</div>
+            <h4 style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">Нет локальной команды</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">Управлять WeChat из-за рубежа невозможно. Нужен native-speaking менеджер в КНР или HK, знающий местные реалии.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--red);">
+            <div style="font-size: 28px; margin-bottom: 8px;">&#9200;</div>
+            <h4 style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">Ожидание быстрых результатов</h4>
+            <p style="font-size: 13px; color: var(--text-muted);">Китай = долгосрочная стратегия. 6-12 месяцев на trust building. Guanxi (&#20851;&#31995;) &mdash; отношения важнее рекламы.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: Roadmap -->
+<section class="section" id="roadmap">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--blue-soft);">&#128506;</div>
+        <div>
+            <div class="slide-marker">Slide 09</div>
+            <h2 class="section-title">Roadmap: 6-месячный план</h2>
+            <div class="section-subtitle">Последовательность шагов для A7A5 в WeChat</div>
+        </div>
+    </div>
+
+    <div class="roadmap-step">
+        <div class="roadmap-num" style="background: var(--accent);">1</div>
+        <div class="roadmap-content">
+            <h4>Месяц 1-2: Фундамент</h4>
+            <p>Регистрация WeChat Service Account (через КНР/HK-партнёра). Найм native Chinese контент-менеджера. Создание brand guidelines на китайском. Аудит конкурентов в WeChat. Настройка WeCom для B2B CRM. <strong>Бюджет: $8,000-15,000</strong></p>
+        </div>
+    </div>
+    <div class="roadmap-step">
+        <div class="roadmap-num" style="background: var(--blue);">2</div>
+        <div class="roadmap-content">
+            <h4>Месяц 2-3: Контент и сообщество</h4>
+            <p>Запуск контент-стратегии: 4 поста/мес в Official Account (trade analytics, market insights). Создание 3-5 WeChat Groups по сегментам (traders, importers, OTC). Первые 2-3 KOL-интеграции. Регистрация на Zhihu и Baidu Baike. <strong>Бюджет: $10,000-20,000</strong></p>
+        </div>
+    </div>
+    <div class="roadmap-step">
+        <div class="roadmap-num" style="background: var(--green);">3</div>
+        <div class="roadmap-content">
+            <h4>Месяц 3-4: Масштабирование</h4>
+            <p>Запуск WeChat Channels (видео-контент). Первые Moments Ads кампании (тест $2,000-5,000). Расширение KOL-программы до 10-15 инфлюенсеров. Участие в HK конференциях с WeChat-промо. Community growth: 2,000-5,000 в группах. <strong>Бюджет: $15,000-30,000</strong></p>
+        </div>
+    </div>
+    <div class="roadmap-step">
+        <div class="roadmap-num" style="background: var(--purple);">4</div>
+        <div class="roadmap-content">
+            <h4>Месяц 4-5: Конверсия</h4>
+            <p>Запуск Mini Program (калькулятор конвертации, трекер курсов). Интеграция с WeCom для автоматизированного onboarding. A/B тестирование рекламных креативов. Расширение на Douyin и Bilibili. Запуск referral-программы через WeChat. <strong>Бюджет: $20,000-40,000</strong></p>
+        </div>
+    </div>
+    <div class="roadmap-step">
+        <div class="roadmap-num" style="background: var(--gold);">5</div>
+        <div class="roadmap-content">
+            <h4>Месяц 5-6: Оптимизация и рост</h4>
+            <p>Анализ данных: ROI по каналам, cost per lead, conversion rates. Масштабирование работающих каналов, отключение неэффективных. Партнёрства с китайскими финтех-компаниями. Подготовка к следующему этапу (offline events в КНР/HK). <strong>Бюджет: $15,000-25,000</strong></p>
+        </div>
+    </div>
+
+    <div class="card bg-warm" style="margin-top: 24px;">
+        <h3 style="font-weight: 700; margin-bottom: 12px; font-size: 16px;">&#128202; Итого: 6-месячный бюджет</h3>
+        <div class="grid-3" style="gap: 12px;">
+            <div class="stat-box" style="background: white; border-radius: 12px;">
+                <div class="stat-number stat-green" style="font-size: 28px;">$68K</div>
+                <div class="stat-label">Минимальный бюджет</div>
+            </div>
+            <div class="stat-box" style="background: white; border-radius: 12px;">
+                <div class="stat-number stat-blue" style="font-size: 28px;">$130K</div>
+                <div class="stat-label">Рекомендуемый бюджет</div>
+            </div>
+            <div class="stat-box" style="background: white; border-radius: 12px;">
+                <div class="stat-number stat-accent" style="font-size: 28px;">5-10K</div>
+                <div class="stat-label">Целевых B2B-контактов</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: Psychology -->
+<section class="section" id="psychology" style="background: linear-gradient(180deg, #FFF7ED 0%, var(--bg) 100%); border-radius: 24px; margin: 0 auto; max-width: 1260px;">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--accent-soft);">&#128161;</div>
+        <div>
+            <div class="slide-marker">Slide 10 &mdash; Internal</div>
+            <h2 class="section-title">Коммуникационная стратегия</h2>
+            <div class="section-subtitle">Психологический портрет контрагента и тактика разговора</div>
+        </div>
+    </div>
+
+    <div class="alert alert-gold" style="margin-bottom: 24px;">
+        <div class="alert-icon">&#128100;</div>
+        <div>
+            <h3>Профиль: Анастасия (@nastya_skachek)</h3>
+            <p>Telegram Premium, без маркетингового бэкграунда ("Маркетинг нет"), вероятно middle-менеджмент или BD/partnerships. Не раскрыла санкционный статус компании. Контакт через рекомендацию (Таня Максименко).</p>
+        </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom: 24px;">
+        <div class="card psych-card">
+            <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#128300; Наблюдения из переписки</h3>
+            <div class="psych-item">
+                <div class="psych-icon">&#127908;</div>
+                <div class="psych-text">
+                    <strong>Предпочитает голосовые</strong>
+                    Сразу попросила "могу голосовым?" &mdash; низкоэнергетическая коммуникация, нежелание структурировать мысли текстом. Может быть привычкой, а может &mdash; недостатком экспертизы для формулирования точного запроса.
+                </div>
+            </div>
+            <div class="psych-item">
+                <div class="psych-icon">&#128172;</div>
+                <div class="psych-text">
+                    <strong>Минимум информации</strong>
+                    Весь запрос: "Хотим продвижение в вичате". Не раскрыла ни продукт, ни бюджет, ни цели, ни целевую аудиторию. Возможно: (1) не знает деталей, (2) не уполномочена делиться, (3) проверяет реакцию.
+                </div>
+            </div>
+            <div class="psych-item">
+                <div class="psych-icon">&#129303;</div>
+                <div class="psych-text">
+                    <strong>"Заранее извиняюсь"</strong>
+                    Осознаёт, что голосовые &mdash; неудобный формат. Проявляет мягкость и sociability. Не конфронтационный тип. Хочет быть "удобной".
+                </div>
+            </div>
+            <div class="psych-item">
+                <div class="psych-icon">&#128171;</div>
+                <div class="psych-text">
+                    <strong>Быстро на созвон</strong>
+                    "А мы можем завтра созвониться?" &mdash; хочет перейти к личному контакту, где легче производить впечатление, чем в тексте. Может указывать на "people person", а не аналитика.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h3 style="font-weight: 700; margin-bottom: 16px; font-size: 16px;">&#127919; Тактика разговора</h3>
+            <div class="psych-item">
+                <div class="psych-icon">1.</div>
+                <div class="psych-text">
+                    <strong>Показать экспертизу, но мягко</strong>
+                    Не "давить умом". Демонстрировать знание WeChat/Китая через конкретные факты и цифры, но в формате диалога, а не лекции. Она должна чувствовать себя комфортно, не "глупо".
+                </div>
+            </div>
+            <div class="psych-item">
+                <div class="psych-icon">2.</div>
+                <div class="psych-text">
+                    <strong>Задавать уточняющие вопросы</strong>
+                    "Какие у вас целевые сегменты в Китае?", "Есть ли уже контакты на материке?", "Кто принимает решение о бюджете?" &mdash; мягко вытягивать информацию.
+                </div>
+            </div>
+            <div class="psych-item">
+                <div class="psych-icon">3.</div>
+                <div class="psych-text">
+                    <strong>Не упоминать санкции первым</strong>
+                    Подождать, пока она раскроет контекст. Если не раскроет &mdash; мягко подвести: "Какая у вас текущая юридическая структура для работы в Китае?" / "Есть ли compliance-фреймворк?"
+                </div>
+            </div>
+            <div class="psych-item">
+                <div class="psych-icon">4.</div>
+                <div class="psych-text">
+                    <strong>Визуалы > текст</strong>
+                    Она визуал (Telegram Premium, минимум текста). Показывать слайды/инфографику, а не зачитывать. Короткие фразы, большие цифры, яркие карточки.
+                </div>
+            </div>
+            <div class="psych-item">
+                <div class="psych-icon">5.</div>
+                <div class="psych-text">
+                    <strong>Закрывать на следующий шаг</strong>
+                    "Давайте я подготовлю подробный план под ваш конкретный кейс. Для этого мне нужно 3-4 часа работы. Мои условия..."
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-bottom: 24px;">
+        <h3 style="font-weight: 700; margin-bottom: 12px; font-size: 16px;">&#128172; Рекомендованные вопросы для встречи</h3>
+        <div class="grid-2" style="gap: 16px;">
+            <div>
+                <p style="font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 8px;">PRODUCT & MARKET</p>
+                <ul class="check-list" style="font-size: 14px;">
+                    <li>Кто ваша целевая аудитория в Китае? B2B (трейдеры, импортёры) или B2C?</li>
+                    <li>Есть ли уже пользователи/клиенты на территории КНР?</li>
+                    <li>Какой объём транзакций сейчас проходит через китайских партнёров?</li>
+                    <li>Есть ли юридическое лицо в КНР или Гонконге?</li>
+                </ul>
+            </div>
+            <div>
+                <p style="font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 8px;">OPERATIONS & BUDGET</p>
+                <ul class="check-list" style="font-size: 14px;">
+                    <li>Есть ли в команде человек, говорящий по-китайски?</li>
+                    <li>Какой бюджет выделен на маркетинг в Китае? (помесячно)</li>
+                    <li>Какие KPI вы ставите? (leads, brand awareness, transaction volume)</li>
+                    <li>Есть ли compliance officer? Как решаете вопросы с санкциями?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: Pricing -->
+<section class="section" id="pricing">
+    <div class="section-header">
+        <div class="section-icon" style="background: var(--gold-soft);">&#128176;</div>
+        <div>
+            <div class="slide-marker">Slide 11</div>
+            <h2 class="section-title">Условия сотрудничества</h2>
+            <div class="section-subtitle">Консалтинг по выходу на рынок Китая</div>
+        </div>
+    </div>
+
+    <div class="grid-2" style="align-items: start;">
+        <div class="pricing-card">
+            <h3>Консалтинг: Китай & WeChat</h3>
+            <div class="pricing-amount">$500<span class="pricing-unit">/час</span></div>
+            <ul class="pricing-features">
+                <li>Стратегия выхода на рынок Китая</li>
+                <li>WeChat ecosystem: аккаунты, контент, реклама</li>
+                <li>Подбор KOL и партнёров в КНР</li>
+                <li>Аудит регуляторных рисков</li>
+                <li>Контент-стратегия для китайской аудитории</li>
+                <li>Помощь с локализацией и позиционированием</li>
+                <li>WeCom CRM настройка и оптимизация</li>
+            </ul>
+            <div class="pricing-total">
+                <div class="pricing-total-label">Минимальный пакет (10 часов)</div>
+                <div class="pricing-total-amount">$5,000</div>
+                <div style="font-size: 13px; opacity: 0.8; margin-top: 4px;">100% предоплата</div>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 16px;">
+                <h3 style="font-weight: 700; margin-bottom: 12px; font-size: 16px;">&#128203; Что входит в 10 часов</h3>
+                <ul class="check-list" style="font-size: 14px;">
+                    <li>Детальный анализ текущего присутствия в Китае</li>
+                    <li>Разработка WeChat-стратегии (account + content + ads)</li>
+                    <li>Техническое задание для китайской команды</li>
+                    <li>Подбор 10-15 потенциальных KOL/KOC</li>
+                    <li>Бренд-гайд для китайского рынка</li>
+                    <li>Пошаговый план на 3 месяца</li>
+                    <li>2 follow-up созвона по ходу реализации</li>
+                </ul>
+            </div>
+            <div class="card bg-soft-pink">
+                <h3 style="font-weight: 700; margin-bottom: 8px; font-size: 16px;">&#128274; Важно</h3>
+                <p style="font-size: 14px; color: var(--text-muted);">Консультация носит <strong>стратегический и аналитический характер</strong>. Не включает: прямое управление рекламными кампаниями, ведение аккаунтов, или операционное исполнение. При необходимости &mdash; рекомендация проверенных агентств в Китае.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: Sources -->
+<section class="section">
+    <div class="section-header">
+        <div class="section-icon" style="background: #F3F4F6;">&#128218;</div>
+        <div>
+            <h2 class="section-title">Источники</h2>
+            <div class="section-subtitle">Данные и публикации, использованные в подготовке</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="grid-2" style="gap: 16px;">
+            <div>
+                <p style="font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 8px;">A7A5 & SANCTIONS</p>
+                <ul style="font-size: 13px; color: var(--text-muted); list-style: none; line-height: 2;">
+                    <li>&#8226; Bloomberg: "Russia-Tied Stablecoin A7A5 Tops $100B" (Jan 2026)</li>
+                    <li>&#8226; CoinDesk: "Inside sanctioned stablecoin issuer A7A5" (Feb 2026)</li>
+                    <li>&#8226; Chainalysis: "Crypto sanctions evasion surged" (Mar 2026)</li>
+                    <li>&#8226; Elliptic: "EU sanctions target A7A5" (2026)</li>
+                    <li>&#8226; Financial Times: Operations on $9B via A7A5 (Jun 2025)</li>
+                    <li>&#8226; OFAC SDN List: Old Vector, Grinex, Meer (Aug 2025)</li>
+                    <li>&#8226; Forbes.ru: "&#1063;&#1090;&#1086; &#1085;&#1091;&#1078;&#1085;&#1086; &#1079;&#1085;&#1072;&#1090;&#1100; &#1086; &#1089;&#1090;&#1077;&#1081;&#1073;&#1083;&#1082;&#1086;&#1080;&#1085;&#1077; &#1040;7&#1040;5" (2025)</li>
+                </ul>
+            </div>
+            <div>
+                <p style="font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 8px;">WECHAT & CHINA MARKET</p>
+                <ul style="font-size: 13px; color: var(--text-muted); list-style: none; line-height: 2;">
+                    <li>&#8226; Marketing Agent Blog: "Complete WeChat Strategy 2026"</li>
+                    <li>&#8226; AppInChina: "WeChat Marketing for Foreign Companies"</li>
+                    <li>&#8226; Comms8: "Cracking WeChat for Western Brands"</li>
+                    <li>&#8226; HNE Consultancy: "WeChat Channel Guide 2026"</li>
+                    <li>&#8226; CoinLaw: "Crypto Regulations in China 2026"</li>
+                    <li>&#8226; BeInCrypto: "China Digital Yuan Interest 2026"</li>
+                    <li>&#8226; PIIE: "China gives up on state-backed digital cash" (2026)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p style="margin-bottom: 8px;"><strong>Prepared by Tim Zinin</strong> &middot; Strategic Consulting</p>
+    <p>&#128231; <a href="https://calendly.com/timzinin">calendly.com/timzinin</a> &middot; &#128222; Telegram: <a href="https://t.me/timzinin">@timzinin</a></p>
+    <p style="margin-top: 16px; opacity: 0.5;">Confidential &middot; March 2026</p>
+</footer>
+
+</body>
+</html>
